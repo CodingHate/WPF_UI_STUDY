@@ -19,6 +19,21 @@
                     <GradientStop Color="#3aada1" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Grid>
+                <Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#4eb1b6"/>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#4eb1b6"/>
+                    <Ellipse Margin="250 450 0 0 " Width="40" Height="40" Fill="#4eb1b6"/>
+                    <Ellipse Margin="50 400 0 0 " Width="40" Height="40" Fill="#4eb1b6"/>
+                </Canvas>
+
+                <StackPanel>
+                    <TextBlock Text="Sign Up" Style="{StaticResource titleText}"/>
+                    <TextBlock Text="Enter your personal info and create new accoutn to connect us" Style="{StaticResource normalText}"
+                               Opacity="0.8" Margin="20 30"/>
+                    <Button Content="Sign Up" Style="{StaticResource button}"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
 
