@@ -12,6 +12,8 @@
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
 
+        <Image Source="Images/close.png" Grid.Column="1" Panel.ZIndex="1" MouseUp="Image_MouseUp" />
+
         <Border CornerRadius="10 0 0 10">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -27,7 +29,7 @@
                     <Ellipse Margin="50 400 0 0 " Width="40" Height="40" Fill="#4eb1b6"/>
                 </Canvas>
 
-                <StackPanel>
+                <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="Sign Up" Style="{StaticResource titleText}"/>
                     <TextBlock Text="Enter your personal info and create new accoutn to connect us" Style="{StaticResource normalText}"
                                Opacity="0.8" Margin="20 30"/>
@@ -37,8 +39,48 @@
         </Border>
 
 
-        <Border Background="#ffffff" Grid.Column="1" CornerRadius="0 10 10 0">
-            
+        <Border Background="#ffffff" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
+            <StackPanel>
+                <TextBlock Text="Sign in to App" Style="{StaticResource titleText}" Foreground="#3ab19b"/>
+                <StackPanel Orientation="Horizontal" Margin="0 20" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource buttonCircle}">
+                        <Image Source="/Images/google.png" Width="20" Height="20"/>
+                    </Button>
+                    <Button Style="{StaticResource buttonCircle}">
+                        <Image Source="/Images/facebook.png" Width="20" Height="20"/>
+                    </Button>
+                    <Button Style="{StaticResource buttonCircle}">
+                        <Image Source="/Images/inlink.png" Width="20" Height="20"/>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="or use you email info : " Style="{StaticResource normalText}" Foreground="#878787" Margin="0 10 0 15"/>
+                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Images/Email.png" Height="20"/>
+                        <TextBlock x:Name="textEmail" Text="Email" MouseDown="textEmail_MouseDown" Style="{StaticResource textHint}"/>
+                        <TextBox x:Name="txtEmail" TextChanged="txtEmail_TextChanged" Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Images/lock.png" Height="20"/>
+                        <TextBlock x:Name="textPassword" Text="password" MouseDown="textPassword_MouseDown" Style="{StaticResource textHint}"/>
+                        <PasswordBox x:Name="txtPassword" PasswordChanged="txtPassword_PasswordChanged" Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+                <Button Content="Sign In" Click="Button_Click" Style="{StaticResource mainbutton}"/>
+            </StackPanel>
         </Border>
     </Grid>
 </Window>
